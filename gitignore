@@ -1,0 +1,150 @@
+# ==============================================
+# Gitignore Android / Kotlin / Gradle complet
+# ==============================================
+
+# --- Gradle ---
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle Wrapper (garder si pertinent)
+# gradle/wrapper/gradle-wrapper.jar
+
+# --- Android Studio / IntelliJ IDEA ---
+# Dossier local de l'IDE — ne jamais commiter
+.idea/
+*.iws
+*.iml
+*.ipr
+# Fichiers de workspace IDEA
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/libraries/
+.idea/caches/
+.idea/shelf/
+# Modules et profiles IDEA
+.idea/modules.xml
+.idea/navEditor.xml
+# Déployments XML IDEA
+.idea/deploymentTargets.xml
+
+# --- Android local.properties & secrets ---
+# ⭐ FICHIER CRITIQUE — ne JAMAIS commiter
+local.properties
+# Clés API et secrets en dur
+.env
+.env.*
+*.env
+secrets.properties
+api_key.properties
+credentials.properties
+
+# --- Keystore & signatures ---
+# Ne JAMAIS commiter les fichiers de signature/release
+*.jks
+*.keystore
+*.p12
+*.pfx
+keystore/
+signing/
+app/release/
+
+# --- Build outputs ---
+# Dossiers de build générés par Gradle
+app/build/
+app/.cxx/
+app/release/
+app/debug/
+build/
+out/
+
+# Generated files Android (databinding, etc.)
+generated/
+generated_src/
+
+# --- Google Services ---
+# Fichier de configuration Firebase (contient des identifiants)
+google-services.json
+google-services-desktop.json
+
+# --- Librairies natives ---
+*.so
+*.aar
+
+# --- APK & bundle ---
+*.apk
+*.aab
+*.apk.hidden
+*.apks
+
+# --- Fichiers temporaires OS ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+~$*
+
+# --- Log files ---
+*.log
+log/
+logs/
+*.trace
+
+# --- Backup & exports ---
+*.bak
+*.backup
+backup/
+*.swp
+*.swo
+*~
+crash_reports/
+
+# --- Python / Node (si tu as des scripts utilitaires) ---
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-error.log*
+
+# --- Kotlin bytecode / cache ---
+*.class
+*.jar
+*.war
+
+# --- Documentation ---
+# Fichiers volumineux générés
+docs/_build/
+site/
+
+# --- Cache divers ---
+.cache/
+.gradle-cache/
+*.pro
+proguard/
+*.map
+
+# --- Localisation (non traduites) ---
+strings.xml.local
+strings.xml.remote
+
+# --- Test coverage ---
+coverage/
+*.coverage
+*.lcov
+jacoco/
+
+# ==============================================
+# WeatherApp — spécifiques au projet
+# ==============================================
+
+# Fichier de cache météo (optionnel, peut contenir des données temporaires)
+weather_cache.json
+cache.json

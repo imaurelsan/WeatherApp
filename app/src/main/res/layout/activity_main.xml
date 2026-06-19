@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ScrollView = conteneur racine qui permet de scroller si l'écran est petit
+     ou si le clavier virtuel pousse le contenu vers le haut -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F0F4F8">
+
+    <!-- LinearLayout vertical = les éléments s'empilent du haut vers le bas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Titre principal de l'application -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌤 Weather App"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Champ de saisie du nom de la ville -->
+        <EditText
+            android:id="@+id/etCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entrez une ville..."
+            android:inputType="textCapWords"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:textColor="#212121"
+            android:textColorHint="#9E9E9E"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Bouton qui déclenche la recherche météo -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rechercher"
+            android:padding="16dp"
+            android:backgroundTint="#1A237E"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- ProgressBar circulaire — visible uniquement pendant le chargement
+             visibility="gone" = invisible ET ne prend pas de place dans le layout -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Carte blanche qui contient tous les résultats météo
+             Cachée par défaut, affichée uniquement quand on a des données -->
+        <LinearLayout
+            android:id="@+id/cardWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <!-- Nom de la ville retournée par l'API -->
+            <TextView
+                android:id="@+id/tvCityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Condition météo principale ex: "Rain", "Clear" -->
+            <TextView
+                android:id="@+id/tvWeatherDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#546E7A"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Température actuelle en °C -->
+            <TextView
+                android:id="@+id/tvTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="56sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Température ressentie -->
+            <TextView
+                android:id="@+id/tvFeelsLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#546E7A"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Humidité en % -->
+            <TextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#546E7A"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Vitesse du vent en km/h -->
+            <TextView
+                android:id="@+id/tvWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#546E7A"/>
+
+        </LinearLayout>
+
+        <!-- Message d'erreur — visible uniquement en cas de problème
+             (ville introuvable, pas de connexion...) -->
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#D32F2F"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
